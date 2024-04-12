@@ -1,0 +1,73 @@
+.navbar{
+
+position: fixed;
+top: 0;
+width: 100%;
+height: 65px;
+padding: 20px;
+display: flex;
+justify-content: space-between;
+background-color: #111;
+color: #fff;
+ z-index: 2;
+
+}
+
+.navbar_links {
+
+    position: fixed;
+    display: flex;
+    gap: 20px; /* Adjust the gap between <p> tags as needed */
+    padding-left: 140px;
+    
+  }
+
+  .input{
+    width: 760px; /* Set initial width to 0 */
+    padding: 8px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 10px;
+    outline: none;
+  transition: ease-in-out; /* Add a transition for the width property */
+  }
+
+  .links{
+    cursor: pointer;
+
+  }
+
+  .links:hover{
+
+    transform: scale(1.1);
+  }
+  .avatar_links{
+    position: fixed;
+    right:50px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+  }
+
+.logo{
+
+    position: fixed;
+    left: -13px;
+    width: 160px;
+}
+.avatar{
+
+    position: fixed;
+    right: 20px;
+    width: 30px;
+}
+
+.signout{
+
+  
+  padding: 0.5rem 1rem;
+  
+  position: fixed;
+    top: 6px;
+    right: 7px;
+}
