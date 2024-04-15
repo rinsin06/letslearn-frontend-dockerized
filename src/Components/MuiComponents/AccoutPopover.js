@@ -33,6 +33,7 @@ const MENU_OPTIONS = [
 
 export default function AccountPopover() {
   const [open, setOpen] = useState(null);
+  const role = localStorage.getItem('role');
 
   const history = useHistory()
 
@@ -121,6 +122,14 @@ export default function AccountPopover() {
         >
           Wishlist
         </MenuItem>
+            {role === 'ROLE_ADMIN' && (     <MenuItem
+          disableRipple
+          disableTouchRipple
+          onClick={() => { history.push('/admin')}}
+          sx={{ typography: 'body2', py: 1.5 }}
+        >
+          Admin Panel
+        </MenuItem>)}
 
         <MenuItem
           disableRipple
