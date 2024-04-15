@@ -4,7 +4,7 @@ import axiosconfig from './config/axios';
 
 axios.defaults.withCredentials = true;
 
-const USER_BASE_REST_API_URL = 'http://localhost:8080';
+const USER_BASE_REST_API_URL = 'http://shopifytech.xyz';
 
 const handleApiError = (func) => async (...args) => {
     try {
