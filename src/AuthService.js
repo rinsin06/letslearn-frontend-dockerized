@@ -4,7 +4,7 @@ import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 
-const USER_BASE_REST_API_URL = 'http://localhost:8080';
+const USER_BASE_REST_API_URL = 'https://shopifytech.xyz';
 
 export const loginUser = (input) => {
      const response = axios.post(USER_BASE_REST_API_URL+'/auth/token'  ,input).catch(function (error) {
