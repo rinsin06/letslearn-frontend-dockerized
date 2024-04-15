@@ -5,7 +5,7 @@ import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 
-const USER_BASE_REST_API_URL = 'http://localhost:8080';
+const USER_BASE_REST_API_URL = 'https://shopifytech.xyz';
 
 export const getProfile = (input) => {
     const params = {
