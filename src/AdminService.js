@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import axiosconfig from './config/axios';
 
-axios.defaults.withCredentials = false;
+axios.defaults.withCredentials = true;
 
 const USER_BASE_REST_API_URL = 'https://shopifytech.xyz';
 
@@ -44,9 +44,7 @@ export const addCategories = (input) => {
         categoryName:input,
     }
    
-    return axios.post(USER_BASE_REST_API_URL+'/admin/create-category',data,{
-      withCredentials: true, // Include cookies in this request
-    });
+    return axios.post(USER_BASE_REST_API_URL+'/admin/create-category',data);
 }
 
 
