@@ -44,7 +44,9 @@ export const addCategories = (input) => {
         categoryName:input,
     }
    
-    return axios.post(USER_BASE_REST_API_URL+'/admin/create-category',data);
+    return axios.post(USER_BASE_REST_API_URL+'/admin/create-category',data{
+      withCredentials: true, // Include cookies in this request
+    });
 }
 
 
