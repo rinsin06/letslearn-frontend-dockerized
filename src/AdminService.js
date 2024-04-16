@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import axiosconfig from './config/axios';
 
-axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = false;
 
 const USER_BASE_REST_API_URL = 'https://shopifytech.xyz';
 
