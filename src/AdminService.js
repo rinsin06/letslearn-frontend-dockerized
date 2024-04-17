@@ -41,11 +41,11 @@ axiosInstance.interceptors.request.use((config) => {
 });
 
 export const getCourses = () => {
-    return axios.get(USER_BASE_REST_API_URL+'/admin/all-courses' );
+    return axiosInstance.get(USER_BASE_REST_API_URL+'/admin/all-courses' );
 }
 
 export const getCategories = () => {
-    return axios.get(USER_BASE_REST_API_URL+'/admin/all-categories' );
+    return axiosInstance.get(USER_BASE_REST_API_URL+'/admin/all-categories' );
 }
 
 
@@ -66,7 +66,7 @@ export const addsubCategories = (input,input1) => {
         subcategoryName:input1
     }
    
-    return axios.post(USER_BASE_REST_API_URL+'/admin/create-subcategory',data);
+    return axiosInstance.post(USER_BASE_REST_API_URL+'/admin/create-subcategory',data);
 }
 
 export const addCourse = (input) => {
@@ -74,7 +74,7 @@ export const addCourse = (input) => {
 
 
    
-    return axios.post(USER_BASE_REST_API_URL+'/admin/create-course',input);
+    return axiosInstance.post(USER_BASE_REST_API_URL+'/admin/create-course',input);
 
 }
 
@@ -86,7 +86,7 @@ export const deleteCourse = (input)=>{
         course_id:input
     }
 
-    return axios.get(USER_BASE_REST_API_URL+'/admin/delete-course',{params:param})
+    return axiosInstance.get(USER_BASE_REST_API_URL+'/admin/delete-course',{params:param})
 }
 
 export const addLessons = (input,input2,input3) => {
@@ -99,7 +99,7 @@ export const addLessons = (input,input2,input3) => {
    }
 
    
-    return axios.post(USER_BASE_REST_API_URL+'/admin/create-lessons',data);
+    return axiosInstance.post(USER_BASE_REST_API_URL+'/admin/create-lessons',data);
 
 }
 
@@ -110,12 +110,12 @@ export const getLessons = (input)=>{
         id:input
     }
 
-    return axios.get(USER_BASE_REST_API_URL+'/admin/course-lessons',{params:param})
+    return axiosInstance.get(USER_BASE_REST_API_URL+'/admin/course-lessons',{params:param})
 }
 
 export const addToWishList = (input)=>{
 
-    return axios.post(USER_BASE_REST_API_URL+'/admin/addTo-wishlist',input);
+    return axiosInstance.post(USER_BASE_REST_API_URL+'/admin/addTo-wishlist',input);
 }
 
 export const getWishList = (input)=>{
@@ -125,7 +125,7 @@ export const getWishList = (input)=>{
         user_id:input
     }
 
-    return axios.get(USER_BASE_REST_API_URL+'/admin/getWishList',{params:param})
+    return axiosInstance.get(USER_BASE_REST_API_URL+'/admin/getWishList',{params:param})
 }
 
 export const removeFromList = (input)=>{
@@ -135,7 +135,7 @@ export const removeFromList = (input)=>{
         id:input
     }
 
-    return axios.get(USER_BASE_REST_API_URL+'/admin/removeFromWishList',{params:param})
+    return axiosInstance.get(USER_BASE_REST_API_URL+'/admin/removeFromWishList',{params:param})
 }
 
 export const addToCart = (userId,coursesId)=>{
@@ -146,7 +146,7 @@ export const addToCart = (userId,coursesId)=>{
         courseId:coursesId
     }
 
-    return axios.post(USER_BASE_REST_API_URL + '/admin/addtocart',data)
+    return axiosInstance.post(USER_BASE_REST_API_URL + '/admin/addtocart',data)
 }
 
 export const removeFromCart = (input)=>{
@@ -156,7 +156,7 @@ export const removeFromCart = (input)=>{
         id:input
     }
 
-    return axios.get(USER_BASE_REST_API_URL+'/admin/removeCartItem',{params:param})
+    return axiosInstance.get(USER_BASE_REST_API_URL+'/admin/removeCartItem',{params:param})
 }
 
 
@@ -168,14 +168,14 @@ export const getUserCart = (input)=>{
 
     }
 
-    return axios.get(USER_BASE_REST_API_URL+'/admin/getUserCart',{params:param})
+    return axiosInstance.get(USER_BASE_REST_API_URL+'/admin/getUserCart',{params:param})
 }
 
 export const checkoutfromcart = (input)=>{
 
     
 
-    return axios.post(USER_BASE_REST_API_URL+'/admin/checkoutFromCart',input)
+    return axiosInstance.post(USER_BASE_REST_API_URL+'/admin/checkoutFromCart',input)
 }
 
 export const checkoutfromwishlist = (input)=>{
@@ -185,7 +185,7 @@ export const checkoutfromwishlist = (input)=>{
         wishListIds:input
     }
 
-    return axios.post(USER_BASE_REST_API_URL+'/admin/checkoutFromWishList',data)
+    return axiosInstance.post(USER_BASE_REST_API_URL+'/admin/checkoutFromWishList',data)
 }
 
 export const addSingleCourseToCart = (userId,courseId)=>{
@@ -196,7 +196,7 @@ export const addSingleCourseToCart = (userId,courseId)=>{
         courseId:courseId
     }
 
-    return axios.post(USER_BASE_REST_API_URL+'/admin/addsingletocart',data)
+    return axiosInstance.post(USER_BASE_REST_API_URL+'/admin/addsingletocart',data)
 }
 
 
@@ -208,7 +208,7 @@ export const addToLearnings = (userId,coursesId)=>{
         courseId:coursesId
     }
 
-    return axios.post(USER_BASE_REST_API_URL+'/admin/addCoursesToLearnings',data)
+    return axiosInstance.post(USER_BASE_REST_API_URL+'/admin/addCoursesToLearnings',data)
 }
 
 export const getLearnings = (input)=>{
@@ -219,7 +219,7 @@ export const getLearnings = (input)=>{
 
     }
 
-    return axios.get(USER_BASE_REST_API_URL+'/admin/getLearnings',{params:param})
+    return axiosInstance.get(USER_BASE_REST_API_URL+'/admin/getLearnings',{params:param})
 }
 
 export const recordProgress = (userId,courseId,progress)=>{
@@ -231,25 +231,25 @@ export const recordProgress = (userId,courseId,progress)=>{
         progress:progress
     }
 
-    return axios.post(USER_BASE_REST_API_URL+'/admin/recordProgress',data)
+    return axiosInstance.post(USER_BASE_REST_API_URL+'/admin/recordProgress',data)
 }
 
 export const createOrder = (input) =>
 {
-    return axios.get(USER_BASE_REST_API_URL+`/admin/payment/${input}`)
+    return axiosInstance.get(USER_BASE_REST_API_URL+`/admin/payment/${input}`)
 }
 
 
 
 export const getCoupons = () =>
 {
-    return axios.get(USER_BASE_REST_API_URL+`/admin/coupons`)
+    return axiosInstance.get(USER_BASE_REST_API_URL+`/admin/coupons`)
 }
 
 
 export const AddCoupon = (input) =>
 {
-    return axios.post(USER_BASE_REST_API_URL+`/admin/coupons/add`,input)
+    return axiosInstance.post(USER_BASE_REST_API_URL+`/admin/coupons/add`,input)
 }
 
 export const EditCoupon = (data,id) =>
@@ -257,7 +257,7 @@ export const EditCoupon = (data,id) =>
     const param={
         id:id
     }
-    return axios.post(USER_BASE_REST_API_URL+`/admin/coupons/edit`,data,{params:param})
+    return axiosInstance.post(USER_BASE_REST_API_URL+`/admin/coupons/edit`,data,{params:param})
 }
 
 
@@ -266,5 +266,5 @@ export const DeleteCoupon = (id) =>
     const param={
         id:id
     }
-    return axios.post(USER_BASE_REST_API_URL+`/admin/coupons/edit`,{params:param})
+    return axiosInstance.post(USER_BASE_REST_API_URL+`/admin/coupons/edit`,{params:param})
 }
