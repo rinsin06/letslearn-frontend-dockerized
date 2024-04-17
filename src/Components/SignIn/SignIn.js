@@ -50,8 +50,8 @@ const SignIn = () => {
             
             const token = response.data.token;
             const refreshToken = response.data.refreshToken;
-            Cookies.set('refreshToken',refreshToken,{path: '/', expires: 10, secure: true, sameSite: 'none', domain: 'shopifytech.xyz' })
-            Cookies.set('token',token,{path: '/', expires: 10, secure: true, sameSite: 'none', domain: 'shopifytech.xyz' })
+            Cookies.set('refreshToken',refreshToken,{ expires: 10, secure: false })
+            Cookies.set('token',token,{ expires: 10, secure: false })
             localStorage.setItem("token", response.data.token);
             localStorage.setItem("name", response.data.name);
             localStorage.setItem("email", response.data.email);
