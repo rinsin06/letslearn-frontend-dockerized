@@ -27,7 +27,18 @@ const handleApiError = (func) => async (...args) => {
     }
   };
   
+const axiosInstance = axios.create({
 
+});
+
+// Add a request interceptor to add the token to headers before sending the request
+axiosInstance.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token'); // assuming token is stored in localStorage
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
 
 export const getCourses = () => {
     return axios.get(USER_BASE_REST_API_URL+'/admin/all-courses' );
@@ -44,7 +55,7 @@ export const addCategories = (input) => {
         categoryName:input,
     }
    
-    return axios.post(USER_BASE_REST_API_URL+'/admin/create-category',data);
+    return axiosInstance.post(USER_BASE_REST_API_URL+'/admin/create-category',data);
 }
 
 
